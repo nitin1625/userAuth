@@ -25,9 +25,10 @@ SECRET_KEY = 'django-insecure-y0=*(m-803e17w#+15qv3w270k@^ack2igy01oc4punh^i4^3j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+AUTH_USER_MODEL='accounts.User'
 ALLOWED_HOSTS = []
 
-
+SMS_SECRET_KEY='5bdcfa64-d66e-11ef-8b17-0200cd936042'
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +51,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
 ROOT_URLCONF = 'registerWithSMS.urls'
 
 TEMPLATES = [
