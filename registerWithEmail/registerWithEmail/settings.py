@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-3spzq7*h6u_nrd$a46h5=7c=6wl(-mum@zweo_kn@y^laowj&6
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL='accounts.CustomUser'
+
 
 
 # Application definition
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER='ps0603432@gmail.com'
+EMAIL_HOST_PASSWORD='gydc xwkz godv tshj'
